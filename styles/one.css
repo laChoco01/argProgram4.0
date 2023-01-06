@@ -2,15 +2,3 @@
 {
     box-sizing: border-box;
 }
-#miranda 
-{
-    margin: 10px 420px;
-    border: outset 10px #FFD300;
-    padding: 14px 19% 14px 6%;
-    background: radial-gradient(ellipse at center,#00BD50 0%, #00C400 50%,#D8F000 100%);
-}
-body 
-{
-    background-color:#00BD50;
-    background: linear-gradient(to right, #00BD50 10%, #00C400 50%, #D8F000 80%);
-}
