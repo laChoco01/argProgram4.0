@@ -1,97 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martínez_Mariano</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="icon" href="../img/chocoPixel1.png">
-    <link rel="stylesheet" href="../styles/two.css">
-    <script src="../scripts/two.js"></script>
-    <!--og protocol-->
-    <meta property="og:description" content="welcome to my Curriculum vitae"/>
-    <meta property="og:title" content="CV: Martinez Mariano"/>
-    <meta property="og:image" content="../img/chocoPixel1.png"/>
-    <meta property="og:type" content="curriculum vitae"/> 
-    <meta property="og:url" content=""/>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Martínez_Mariano</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">   
+        <link rel="icon" href="../img/chocoPixel1.png">
+        <link rel="stylesheet" href="../styles/two.css">
+        <link rel="stylesheet" href="../styles/css/bootstrap.css">
+        
+        <!--og protocol-->
+        <meta property="og:description" content="welcome to my Curriculum vitae"/>
+        <meta property="og:title" content="CV: Martinez Mariano"/>
+        <meta property="og:image" content="../img/chocoPixel1.png"/>
+        <meta property="og:type" content="curriculum vitae"/> 
+        <meta property="og:url" content=""/>
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <div>
-        <!--here goes my great face! im using span because i need two blocks in same line-->
-        <span id="face">
-            <img src="idk" alt="a photo of my face">
-        </span>
-        <header>Martínez Mariano</header>
-        <sub> M.E.R.A.(mecanico de equipos radioelectricos de aeronaves)</sub>
-        <sub>A.R.E.M (aircraft radio equipment mechanic)</sub>
-    </div>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#">studies</a> 
-        </li>
-        <li class="nav-item">
-           <a class="nav-link" href="#">personal information</a> </li>
-        <li class="nav-item">
-           <a class="nav-link" href="#">qualities</a> 
-        </li>
-        <li class="nav-item">
-           <a class="nav-link" href="#">work experiencie</a>
-        </li>
-        <li class="nav-item">
-           <a class="nav-link" href="#">social media</a> 
-        </li>
-    </ul>
-    <button onclick="barNav()"> teeest </button>
-    <div> 
-        stu
-        <ul>
-            <li>
-                secundary:
-                (2015-2021)           
-            </li>
-            <p> &emsp;finished in 2021 at <a href="https://www.impatrq.com">E.E.S.T N°7 T.R.Q. </a></p> 
-            <li class="nav-item">
-                university:
-                (2022)
-            </li>
-            <p> &emsp;studying second year of information systems engineering in 2023 at <a href="https://www.frlp.utn.edu.ar">F.R.L.P. U.T.N.</a></p>
-        </ul>
-    </div>
-    <div> 
-        pi 
-        Mariano Gabriel Martinez.
-        twenty years old.
-        location: Argentina, Buenos Aires, Quilmes.
-       
-    </div>
-    <div> 
-        qu
-        Intermediate English (B2) .
-	    Basic German (A). 
-        Basic C programming.
-        Basic HTML, CSS and javascript.
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-3">
+                        <img class=" img-fluid" id="photo" src="../img/chocoPixel1.png" alt="a photo of my face">
+                    </div>
+                    <div id="firstR" class="col-sm-12 col-md-7 col-lg-7 col-xl-8">
+                        <h1  id="Me">Mariano Martinez</h1>
+                        <sub id="subt">A.R.E.M (aircraft radio equipment mechanic)</sub>
+                    </div>     
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <ul class="nav nav-tabs">
+                        <div class="col">
+                            <li class="nav-item">
+                                <a class="nav-link" id="st" href="#studies">studies</a> 
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <a class="nav-link" id="pi" href="#PersonalInfo">personal information</a> 
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <a class="nav-link" id="q" href="#qualities">qualities</a> 
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <a class="nav-link" id="we" href="#workE">work experience</a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <a class="nav-link" id="sm" href="#socialM">social media</a> 
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row" id="studies">
+                <div class="col-12">
+                    <ul>
+                        <li>
+                            secundary:
+                            (2015-2021)           
+                        </li>
+                        <p> finished in 2021 at<a class="linko" id="sec" target="_blank" href="https://www.impatrq.com">E.E.S.T N°7 T.R.Q. </a></p> 
+                        <li class="nav-item">
+                            university:
+                            (2022)
+                        </li>
+                        <p> studying second year of information systems engineering in 2023 at<a id="un" target="_blank" class="linko" href="https://www.frlp.utn.edu.ar">F.R.L.P. U.T.N.</a></p>
+                    </ul>
+                </div> 
+            </div>
 
-    </div>
-    <div>
-        we
-        two hundred hours of professional practice at E.E.S.T. in 2021
-    </div>
-    <div>
-        sm
-        <br><i class="bi bi-envelope-at"></i>martinez25mariano25@gmail.com
-        <br><i class="bi bi-linkedin"></i>
-        <br><i class="bi bi-phone"></i>2975058033
-        <br><i class="bi bi-github"></i> <a href="https://github.com/laChoco01 ">my github profile</a>
+            <div class="row" id="PersonalInfo"> 
+                <div class="col-12">
+                    <ul>
+                        <li>Mariano Gabriel Martinez.</li>
+                        <li>twenty years old.</li>
+                        <li>location: Argentina, Buenos Aires, Quilmes.</li>
+                    </ul>
+                </div>
+            </div>
 
-    </div>
+            <div class="row" id="qualities"> 
+                <div class="col-12">
+                    <ul>
+                        <li>Intermediate English (B2).</li>
+                        <li>Basic German (A).</li> 
+                        <li>Basic C programming.</li>
+                        <li>Basic HTML, CSS and javascript.</li>
+                        <li>gestion version software with Git and remote with Github.</li>
+                        <li>Basic Assembler.</li> 
+                    </ul>
+                </div>
+            </div>
 
-    <p id="positiveMessage">enjoy your stay!</p>
-    <img src="../img/jolteon.gif" alt="">
-
-  
-</body>
+            <div class="row" id="workE">
+                <div class="col-12">
+                    <ul>
+                        <li>two hundred hours of professional practice at E.E.S.T. in 2021.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <address id="socialM">
+                        <br><i class="bi bi-envelope-at"></i>martinez25mariano25@gmail.com
+                        <br><i class="bi bi-linkedin"></i>
+                        <br><i class="bi bi-phone"></i>2975058033
+                        <br><i class="bi bi-github"></i><a id="adressfour" class="linko"target="_blank"href="https://github.com/laChoco01">Github</a>
+                        <br>
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-8">
+                    <p id="positiveMessage">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste voluptatibus eius
+                        ,mollitia corporis laborum, maxime praesentium ratione distinctio, cum magnam numquam 
+                        dolor enjoy your stay!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro nesciunt totam
+                        laboriosam voluptatibus similique iure aperiam sint vero vitae velit reprehenderit nulla repellendus
+                        dolorum eius possimus facilis, quos quis dolor.
+                    </p>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-6 col-xl-3">
+                        <div id="boxif" class="ratio ratio-4x3">
+                            <iframe id="vod" src="" frameborder="0"></iframe>
+                        </div>
+                        <img id="pon" class="img-fluid" src="" alt="">
+                        <a href="" id="ton" class="btn text-muted" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="fo">
+                <div class="container text-center">
+                    <p class="text-muted mb-0">2023 Martinez Gabriel Martinez.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="../scripts/two.js"></script>
+    </body>
 </html>
