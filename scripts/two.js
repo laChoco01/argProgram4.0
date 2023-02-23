@@ -6,13 +6,29 @@ window.addEventListener('load',obetenerDatos);
 window.addEventListener('load',conseguirUrl);
 
 //config of serviceWorker
-let swlocation = "sw.js";
-if(navigator.serviceWorker)
-{
-    if(window.location.href.includes("localhost")) swlocation = "/sw.js";
-    navigator.serviceWorker.register(swlocation);
-}
+const registerServiceWorker = async () => {
+    console.log("dude");
+    if("serviceWorker" in navigator){
+      try{
+        const registration = await navigator.serviceWorker.register("/home/bolsa/Documents/argProgram4.0/scripts/sw.js", {
+          scope: "/",
+        });
+        if(registration.installing)
+        {
+          console.log("Instalando el Service worker");
+        } else if (registration.waiting) {
+          console.log("Service worker instalado");
+        } else if (registration.active) {
+          console.log("Service worker activo");
+        }
+      } catch (error) {
+        console.error(`Falló el registro con el ${error}`);
+      }
+    }
+};
 
+registerServiceWorker();
+  
 //
 document.getElementById("st").onclick = function()
 {
