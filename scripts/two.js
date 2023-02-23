@@ -10,7 +10,7 @@ const registerServiceWorker = async () => {
     console.log("dude");
     if("serviceWorker" in navigator){
       try{
-        const registration = await navigator.serviceWorker.register("/home/bolsa/Documents/argProgram4.0/scripts/sw.js", {
+        const registration = await navigator.serviceWorker.register("/sw.js", {
           scope: "/",
         });
         if(registration.installing)
