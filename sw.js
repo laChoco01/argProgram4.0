@@ -4,8 +4,8 @@ const STATIC_CACHE = "static";
 const APP_SHELL =
 [
     "/",
-    "../html/cv.html",
-    "../styles/css/bootstrap.cs",
+    "html/cv.html",
+    "styles/css/bootstrap.cs",
     "scripts/two.js",
 ];
 
