@@ -5,7 +5,7 @@ const APP_SHELL =
 [
     "/",
     "./html/cv.html",
-    "./styles/css/bootstrap.cs",
+    "./styles/css/bootstrap.css",
     "./scripts/two.js",
 ];
 
