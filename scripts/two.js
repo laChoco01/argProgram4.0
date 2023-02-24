@@ -7,35 +7,6 @@ window.addEventListener('load',conseguirUrl);
 window.addEventListener('load',notificacion);
 
 //config of serviceWorker
-/*
-const registerServiceWorker = async () => {
-  console.log("dude");
-  if("serviceWorker" in navigator){
-    try{
-      const registration = await navigator.serviceWorker.register("/sw.js", {
-        scope: "/",
-      });
-      if(registration.installing)
-      {
-        console.log("Instalando el Service worker");
-      } 
-      else if(registration.waiting) 
-      {
-        console.log("Service worker instalado");
-      } 
-      else if(registration.active) 
-      {
-        console.log("Service worker activo");
-      }
-    } 
-    catch(error)
-    {
-      console.error(`Falló el registro con el ${error}`);
-    }
-  }
-};
-registerServiceWorker();
- */
 window.addEventListener("load", () => {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("../sw.js")
