@@ -1,17 +1,17 @@
 {
-    "name": "Martinez Mariano",
-    "short_name": "cvMM",
-    "description": "curriculum vitae-Martinez Mariano",
-    "icons": [
-      {
-        "src": "img/chocoPixel1.png",
-        "sizes": "32x32",
-        "type": "image/png"
-      }
-    ],
-    "start_url": "/Documents/argProgram4.0/html/cv.html",
-    "display": "fullscreen",
-    "theme_color": "#6A0044",
-    "background_color": "#6A0044"
-  }
+  "name": "Martinez Mariano",
+  "short_name": "cvMM",
+  "description": "curriculum vitae-Martinez Mariano",
+  "icons": [
+    {
+      "src": "img/chocoPixel1.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/Documents/argProgram4.0/html/cv.html",
+  "display": "fullscreen",
+  "theme_color": "#6A0044",
+  "background_color": "#6A0044"
+}
   

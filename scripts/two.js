@@ -4,31 +4,49 @@ const ruta = `https://api.nasa.gov/planetary/apod?api_key=${nkey}`;
 
 window.addEventListener('load',obetenerDatos);
 window.addEventListener('load',conseguirUrl);
+window.addEventListener('load',notificacion);
 
 //config of serviceWorker
+/*
 const registerServiceWorker = async () => {
-    console.log("dude");
-    if("serviceWorker" in navigator){
-      try{
-        const registration = await navigator.serviceWorker.register("/sw.js", {
-          scope: "/",
-        });
-        if(registration.installing)
-        {
-          console.log("Instalando el Service worker");
-        } else if (registration.waiting) {
-          console.log("Service worker instalado");
-        } else if (registration.active) {
-          console.log("Service worker activo");
-        }
-      } catch (error) {
-        console.error(`Falló el registro con el ${error}`);
+  console.log("dude");
+  if("serviceWorker" in navigator){
+    try{
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+      });
+      if(registration.installing)
+      {
+        console.log("Instalando el Service worker");
+      } 
+      else if(registration.waiting) 
+      {
+        console.log("Service worker instalado");
+      } 
+      else if(registration.active) 
+      {
+        console.log("Service worker activo");
       }
+    } 
+    catch(error)
+    {
+      console.error(`Falló el registro con el ${error}`);
     }
+  }
 };
-
 registerServiceWorker();
-  
+ */
+window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("../sw.js")
+    .then(function () {
+      console.log("andando");
+    })
+    .catch(function(err) {
+      console.log("error",err);
+    });
+  }
+}); 
 //
 document.getElementById("st").onclick = function()
 {
@@ -126,12 +144,24 @@ function sabado({url})
     let a = document.getElementById("ton");
     a.setAttribute("href", url);
 }
-
-var button = document.getElementById("notifications");
-button.addEventListener("click", function (e) {
+//
+function notificacion() 
+{
   Notification.requestPermission().then(function (result) {
     if (result === "granted") {
       randomNotification();
     }
   });
-});
+}
+function randomNotification() {
+  var notifTitle = "hola";
+  var notifBody = "Creado por yo";
+  var notifImg = "../img/chocoPixel1.png";
+  var options = {
+    body: notifBody,
+    icon: notifImg,
+  };
+  var notif = new Notification(notifTitle, options);
+  setTimeout(randomNotification, 300000000);
+}
+
