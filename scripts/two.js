@@ -1,17 +1,16 @@
 
 const nkey = "caqMq8SUbTbFmWC7CcX4yxSFFVckaySvF7Vgwe2l";
-const ruta = `https://api.nasa.gov/planetary/apod?api_key=${nkey}`;
+const route = `https://api.nasa.gov/planetary/apod?api_key=${nkey}`;
 
-window.addEventListener('load',obetenerDatos);
-window.addEventListener('load',conseguirUrl);
-window.addEventListener('load',notificacion);
-
+window.addEventListener('load',getInfo);
+window.addEventListener('load',getUrl);
+window.addEventListener('load',notification);
 //config of serviceWorker
 window.addEventListener("load", () => {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("../sw.js")
     .then(function () {
-      console.log("andando");
+      console.log("working!");
     })
     .catch(function(err) {
       console.log("error",err);
@@ -21,96 +20,96 @@ window.addEventListener("load", () => {
 //
 document.getElementById("st").onclick = function()
 {
-    mostrarDisplay("studies");
-    ocultarDisplay("PersonalInfo");
-    ocultarDisplay("qualities");
-    ocultarDisplay("workE");
-    ocultarDisplay("socialM");
+    showDisplay("studies");
+    hideDisplay("PersonalInfo");
+    hideDisplay("qualities");
+    hideDisplay("workE");
+    hideDisplay("socialM");
 }
 
 document.getElementById("pi").onclick = function()
 {
-    mostrarDisplay("PersonalInfo");
-    ocultarDisplay("studies");
-    ocultarDisplay("qualities");
-    ocultarDisplay("workE");
-    ocultarDisplay("socialM");
+    showDisplay("PersonalInfo");
+    hideDisplay("studies");
+    hideDisplay("qualities");
+    hideDisplay("workE");
+    hideDisplay("socialM");
 }
 
 document.getElementById("q").onclick = function()
 {
-    mostrarDisplay("qualities");
-    ocultarDisplay("studies");
-    ocultarDisplay("PersonalInfo");
-    ocultarDisplay("workE");
-    ocultarDisplay("socialM");
+    showDisplay("qualities");
+    hideDisplay("studies");
+    hideDisplay("PersonalInfo");
+    hideDisplay("workE");
+    hideDisplay("socialM");
 }
 
 document.getElementById("we").onclick = function()
 {
-    mostrarDisplay("workE");
-    ocultarDisplay("studies");
-    ocultarDisplay("qualities");
-    ocultarDisplay("PersonalInfo");
-    ocultarDisplay("socialM");
+    showDisplay("workE");
+    hideDisplay("studies");
+    hideDisplay("qualities");
+    hideDisplay("PersonalInfo");
+    hideDisplay("socialM");
 }
 
 document.getElementById("sm").onclick = function()
 {
-    mostrarDisplay("socialM");
-    ocultarDisplay("studies");
-    ocultarDisplay("qualities");
-    ocultarDisplay("workE");
-    ocultarDisplay("PersonalInfo");
+    showDisplay("socialM");
+    hideDisplay("studies");
+    hideDisplay("qualities");
+    hideDisplay("workE");
+    hideDisplay("PersonalInfo");
 }
 
-function ocultarDisplay(a) {
+function hideDisplay(a) {
     let demoo = document.getElementById(a);
     demoo.style.display = "none";
 }
 
-function mostrarDisplay(b) {
+function showDisplay(b) {
     let beta = document.getElementById(b);
     beta.style.display = "block";
 }
 
 ////config of nasa api
 
-function obetenerDatos() {
-    fetch(ruta)
-    .then(respuesta => respuesta.json())
-    .then(resultado => mostrarDatos(resultado));
+function getInfo() {
+    fetch(route)
+    .then(answer => answer.json())
+    .then(answer => showInfo(answer));
 }
 
-function mostrarDatos({ title, media_type, url , explanation})
+function showInfo({ title, media_type, url , explanation})
 {
     const pon = document.getElementById("pon");
-    ocultarDisplay(pon.id);
+    hideDisplay(pon.id);
     const vod = document.getElementById("vod");
     const boxif = document.getElementById("boxif");
-    ocultarDisplay(boxif.id);
+    hideDisplay(boxif.id);
     const ton = document.getElementById("ton");
     ton.innerHTML = title;
     if(media_type == 'image')
     {
-        mostrarDisplay(pon.id);
+        showDisplay(pon.id);
         pon.setAttribute("src",url);
         pon.setAttribute("alt", explanation);
     }
     else
     {
-        mostrarDisplay(boxif.id);
-        mostrarDisplay(pon.id);
+        showDisplay(boxif.id);
+        showDisplay(pon.id);
         vod.setAttribute("src", url);
     }
 }
-function conseguirUrl()
+function getUrl()
 {
-    fetch(ruta)
-    .then(respuesta => respuesta.json())
-    .then(respuesta => sabado(respuesta));
+    fetch(route)
+    .then(answer => answer.json())
+    .then(answer => setUrl(answer));
 }
-function sabado({url})
+function setUrl({url})
 {
     let a = document.getElementById("ton");
     a.setAttribute("href", url);
@@ -120,19 +119,31 @@ function notificacion()
 {
   Notification.requestPermission().then(function (result) {
     if (result === "granted") {
-      randomNotification();
+      notification();
     }
   });
 }
-function randomNotification() {
-  var notifTitle = "hola";
-  var notifBody = "Creado por yo";
-  var notifImg = "../img/chocoPixel1.png";
+function notification() {
+  var status = "still"
+  var notifTitle;
+  var notifBody;
+  var notifImg;
+  if(status == "still")
+  {
+    notifTitle = "¡Welcome!";
+    notifBody = "¡i'm" + status + "looking for a job!";
+    notifImg = "../img/okPixel1.png";
+  }
+  else
+  {
+    notifTitle = "¡ups!";
+    notifBody = "¡i'm not lokking for a job!";
+    notifImg = "../img/okPixel2.png";
+  }
   var options = {
     body: notifBody,
     icon: notifImg,
   };
   var notif = new Notification(notifTitle, options);
-  setTimeout(randomNotification, 300000000);
 }
 
