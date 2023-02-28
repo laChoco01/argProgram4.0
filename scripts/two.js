@@ -1,10 +1,13 @@
 
 const nkey = "caqMq8SUbTbFmWC7CcX4yxSFFVckaySvF7Vgwe2l";
 const route = `https://api.nasa.gov/planetary/apod?api_key=${nkey}`;
-
+var zap = "still"
 window.addEventListener('load',getInfo);
 window.addEventListener('load',getUrl);
-window.addEventListener('load',notification);
+if(zap == "no")
+{
+  notificacion();  
+}
 //config of serviceWorker
 window.addEventListener("load", () => {
   if ("serviceWorker" in navigator) {
@@ -124,14 +127,14 @@ function notificacion()
   });
 }
 function notification() {
-  var status = "still"
+  
   var notifTitle;
   var notifBody;
   var notifImg;
-  if(status == "still")
+  if(zap == "still")
   {
     notifTitle = "¡Welcome!";
-    notifBody = "¡i'm" + status + "looking for a job!";
+    notifBody = "¡i'm still looking for a job!";
     notifImg = "../img/okPixel1.png";
   }
   else

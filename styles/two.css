@@ -14,9 +14,11 @@ body
 }
 #photo 
 {
+    padding: 0%;
+    margin: 0%;
     height: 270px;
-    width: 256px;
     display: inline;
+    border-radius: 50%;
 }
 #Me
 {
